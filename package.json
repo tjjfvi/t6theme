@@ -1,21 +1,26 @@
 {
-    "name": "t6theme",
-    "displayName": "t6theme",
-    "description": "",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.35.0"
-    },
-    "categories": [
-        "Themes"
-    ],
-    "contributes": {
-        "themes": [
-            {
-                "label": "T6 Theme",
-                "uiTheme": "vs-dark",
-                "path": "./themes/T6 Theme-color-theme.json"
-            }
-        ]
-    }
+  "name": "t6theme",
+  "displayName": "t6theme",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.35.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "T6",
+        "uiTheme": "vs-dark",
+        "path": "./themes/T6.json"
+      },
+      {
+        "label": "T6 (old)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/old.json"
+      }
+    ]
+  }
 }

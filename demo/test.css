@@ -1,0 +1,18 @@
+.someClass {
+  font-family: serif;
+}
+
+#someID {
+  background: yellow !important;
+}
+
+main {
+  margin-top: 20px;
+}
+
+div#foo.someotherclass:hover:not(.test)::after {
+  padding: 20px;
+  box-shadow: 0 0 0 2px inset;
+}
+
+@import url();
