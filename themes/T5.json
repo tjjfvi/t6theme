@@ -209,6 +209,12 @@
       }
     },
     {
+      "scope": "meta.object-literal.key, entity.other.attribute-name.tsx",
+      "settings": {
+        "foreground": "#92c8e4"
+      }
+    },
+    {
       "scope": "meta.embedded.block.rustdoc",
       "settings": {
         "foreground": "#6f7376"
@@ -350,6 +356,12 @@
       "scope": "meta.embedded.block.rustdoc keyword.operator.assignment, meta.embedded.block.rustdoc punctuation.separator.key-value, meta.embedded.block.rustdoc punctuation.separator.comma",
       "settings": {
         "foreground": "#7b7f82"
+      }
+    },
+    {
+      "scope": "meta.embedded.block.rustdoc meta.object-literal.key, meta.embedded.block.rustdoc entity.other.attribute-name.tsx",
+      "settings": {
+        "foreground": "#7aa7bf"
       }
     },
     {

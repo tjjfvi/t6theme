@@ -12,6 +12,11 @@
   "contributes": {
     "themes": [
       {
+        "label": "T5",
+        "uiTheme": "vs-dark",
+        "path": "./themes/T5.json"
+      },
+      {
         "label": "T6",
         "uiTheme": "vs-dark",
         "path": "./themes/T6.json"
