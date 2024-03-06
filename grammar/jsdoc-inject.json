@@ -1,0 +1,65 @@
+{
+  "injectionSelector": "L:-string -meta.embedded.block.jsdoc",
+  "patterns": [
+    {
+      "include": "#double-slash"
+    },
+    {
+      "include": "#slash-star"
+    }
+  ],
+  "repository": {
+    "double-slash": {
+      "begin": "(?:^|\\G)\\s*// ?",
+      "name": "comment.line.double-slash.js",
+      "contentName": "meta.embedded.block.jsdoc",
+      "patterns": [
+        {
+          "include": "text.html.markdown"
+        }
+      ],
+      "while": "(?:^|\\G)\\s*// ?"
+    },
+    "slash-star": {
+      "begin": "^\\s*/\\*",
+      "end": "\\*/",
+      "name": "comment.block.js",
+      "patterns": [
+        {
+          "include": "#slash-star-inner"
+        }
+      ]
+    },
+    "slash-star-inner": {
+      "xbegin": "(?:^|\\G)\\s*(\\*(?!/) ?)?",
+      "begin": "(?!.*\\*/)",
+      "end": ".*(?=\\*/)",
+      "name": "meta.embedded.block.jsdoc",
+      "patterns": [
+        {
+          "include": "#slash-star-inner-stars"
+        },
+        {
+          "include": "#slash-star"
+        },
+        {
+          "include": "text.html.markdown"
+        }
+      ]
+    },
+    "slash-star-inner-stars": {
+      "begin": "(?:^|\\G)\\s*(\\*(?!/) ?)",
+      "while": "(?:^|\\G)\\s*(\\*(?!/) ?)",
+      "contentName": "meta.embedded.block.jsdoc",
+      "patterns": [
+        {
+          "include": "#slash-star"
+        },
+        {
+          "include": "text.html.markdown"
+        }
+      ]
+    }
+  },
+  "scopeName": "comment.markdown-cell-inject.jsdoc"
+}

@@ -139,26 +139,28 @@ for (const N of [5, 6]) {
       },
       { scope: "heading", settings: { fontStyle: "bold", foreground: blue } },
       ...baseTokens,
-      scope("meta.embedded.block.rustdoc", comment),
-      ...baseTokens.map((x) =>
-        scope(
-          x.scope.split(", ").map((x) => "meta.embedded.block.rustdoc " + x)
-            .join(
-              ", ",
+      ...["rustdoc", "jsdoc"].flatMap(doc => [
+        scope(`meta.embedded.block.${doc}`, comment),
+        ...baseTokens.map((x) =>
+          scope(
+            x.scope.split(", ").map((x) => `meta.embedded.block.${doc} ` + x)
+              .join(
+                ", ",
+              ),
+            lerp(
+              x.settings.foreground === code ? white : x.settings.foreground,
+              black,
+              .3,
             ),
-          lerp(
-            x.settings.foreground === code ? white : x.settings.foreground,
-            black,
-            .3,
-          ),
-        )
-      ),
-      scope("meta.embedded.block.rustdoc comment", comment),
-      scope("meta.embedded.block.rustdoc comment", comment),
-      {
-        scope: "meta.embedded.block.rustdoc heading",
-        settings: { fontStyle: "bold", foreground: comment },
-      },
+          )
+        ),
+        scope(`meta.embedded.block.${doc} comment`, comment),
+        scope(`meta.embedded.block.${doc} comment`, comment),
+        {
+          scope: `meta.embedded.block.${doc} heading`,
+          settings: { fontStyle: "bold", foreground: comment },
+        },
+      ]),
     ],
   }
 

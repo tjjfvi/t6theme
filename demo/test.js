@@ -3,6 +3,25 @@ import ReactDOM from 'react-dom';
 import * as TestUtils from 'react-dom/test-utils';
 import CheckboxWithLabel from '../CheckboxWithLabel';
 
+// # foo
+// `a` *b* **c**
+
+/*
+ * hi `a`
+ * 
+ */
+
+/**
+ * This is some jsdoc with *italics*, **bold**, `code`, and cool stuff like that.
+ * 
+ * ```ts
+ * console.log("woah, it's a code block!");
+ * class Foo {
+ *   bar = 5;
+ * }
+ * ```
+ */
+
 it('CheckboxWithLabel changes the text after click', () => {
   // Render a checkbox with label in the document
   const checkbox = TestUtils.renderIntoDocument(

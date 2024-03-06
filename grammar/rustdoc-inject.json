@@ -1,0 +1,106 @@
+{
+  "injectionSelector": "L:source.rust -string -meta.embedded.block.rustdoc",
+  "patterns": [
+    {
+      "include": "#triple-slash"
+    },
+    {
+      "include": "#double-slash-exclamation"
+    },
+    {
+      "include": "#double-slash"
+    },
+    {
+      "include": "#slash-double-star"
+    },
+    {
+      "include": "#slash-star"
+    }
+  ],
+  "repository": {
+    "triple-slash": {
+      "begin": "(?:^|\\G)\\s*/// ?",
+      "name": "comment.line.documentation.rust",
+      "contentName": "meta.embedded.block.rustdoc",
+      "patterns": [
+        {
+          "include": "text.html.markdown.rustdoc"
+        }
+      ],
+      "while": "(?:^|\\G)\\s*/// ?"
+    },
+    "double-slash": {
+      "begin": "(?:^|\\G)\\s*// ?",
+      "name": "comment.line.double-slash.rust",
+      "contentName": "meta.embedded.block.rustdoc",
+      "patterns": [
+        {
+          "include": "text.html.markdown.rustdoc"
+        }
+      ],
+      "while": "(?:^|\\G)\\s*// ?"
+    },
+    "double-slash-exclamation": {
+      "begin": "(?:^|\\G)\\s*//! ?",
+      "name": "comment.line.double-slash.rust",
+      "contentName": "meta.embedded.block.rustdoc",
+      "patterns": [
+        {
+          "include": "text.html.markdown.rustdoc"
+        }
+      ],
+      "while": "(?:^|\\G)\\s*//! ?"
+    },
+    "slash-double-star": {
+      "begin": "^\\s*/\\*\\*",
+      "end": "\\*/",
+      "name": "comment.block.documentation.rust",
+      "patterns": [
+        {
+          "include": "#slash-star-inner"
+        }
+      ]
+    },
+    "slash-star": {
+      "begin": "^\\s*/\\*",
+      "end": "\\*/",
+      "name": "comment.block.rust",
+      "patterns": [
+        {
+          "include": "#slash-star-inner"
+        }
+      ]
+    },
+    "slash-star-inner": {
+      "xbegin": "(?:^|\\G)\\s*(\\*(?!/) ?)?",
+      "begin": "(?!.*\\*/)",
+      "end": ".*(?=\\*/)",
+      "name": "meta.embedded.block.rustdoc",
+      "patterns": [
+        {
+          "include": "#slash-star-inner-stars"
+        },
+        {
+          "include": "#slash-star"
+        },
+        {
+          "include": "text.html.markdown.rustdoc"
+        }
+      ]
+    },
+    "slash-star-inner-stars": {
+      "begin": "(?:^|\\G)\\s*(\\*(?!/) ?)",
+      "while": "(?:^|\\G)\\s*(\\*(?!/) ?)",
+      "contentName": "meta.embedded.block.rustdoc",
+      "patterns": [
+        {
+          "include": "#slash-star"
+        },
+        {
+          "include": "text.html.markdown.rustdoc"
+        }
+      ]
+    }
+  },
+  "scopeName": "comment.markdown-cell-inject.rustdoc"
+}

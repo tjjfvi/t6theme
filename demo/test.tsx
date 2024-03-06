@@ -3,6 +3,24 @@ import { Person, SearchService } from '../shared'
 import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
 
+// # foo
+// `a` *b* **c**
+
+/*
+ * hi `a`
+ * 
+ */
+
+/**
+ * This is some jsdoc with *italics*, **bold**, `code`, and cool stuff like that.
+ * 
+ * ```ts
+ * console.log("woah, it's a code block!");
+ * class Foo {
+ *   bar = 5;
+ * }
+ * ```
+ */
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',

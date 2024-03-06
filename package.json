@@ -26,6 +26,56 @@
         "uiTheme": "vs-dark",
         "path": "./themes/old.json"
       }
+    ],
+    "languages": [
+      {
+        "id": "rustdoc",
+        "extensions": [
+          ".rustdoc"
+        ],
+        "configuration": "./grammar/rustdoc-language-configuration.json"
+      },
+      {
+        "id": "rust",
+        "extensions": [
+          ".rs"
+        ],
+        "configuration": "./grammar/rust-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "rustdoc",
+        "scopeName": "text.html.markdown.rustdoc",
+        "path": "grammar/rustdoc.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.rust": "rust",
+          "meta.embedded.block.markdown": "markdown"
+        }
+      },
+      {
+        "injectTo": [
+          "source.rust"
+        ],
+        "scopeName": "comment.markdown-cell-inject.rustdoc",
+        "path": "grammar/rustdoc-inject.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.rustdoc": "rustdoc"
+        }
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.jsx",
+          "source.ts",
+          "source.tsx"
+        ],
+        "scopeName": "comment.markdown-cell-inject.jsdoc",
+        "path": "grammar/jsdoc-inject.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.markdown": "markdown"
+        }
+      }
     ]
   }
 }
