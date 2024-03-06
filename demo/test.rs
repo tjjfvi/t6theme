@@ -15,6 +15,7 @@ mod foo {}
 
   /*
    * ```
+   * # use crate::foo;
    * use foo::{bar as baz};
    * ```
    */

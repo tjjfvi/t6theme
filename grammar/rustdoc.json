@@ -44,6 +44,10 @@
           "contentName": "meta.embedded.block.rust",
           "patterns": [
             {
+              "match": "(?:^|\\G)#(?:(?: .*)?$|(?=#))",
+              "name": "comment.line.hidden.rustdoc"
+            },
+            {
               "include": "source.rust"
             }
           ]
