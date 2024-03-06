@@ -29,14 +29,19 @@
     "editorInfo.foreground": "#bdc3c780",
     "editorWidget.background": "#252830",
     "editorWidget.border": "#00000000",
-    "editor.lineHighlightBackground": "#1e2028",
+    "editor.lineHighlightBackground": "#bdc3c710",
     "editor.lineHighlightBorder": "#00000000",
     "input.background": "#252830",
     "checkbox.background": "#252830",
     "checkbox.border": "#00000000",
     "dropdown.background": "#252830",
     "focusBorder": "#454850",
-    "editorLightBulb.foreground": "#656870"
+    "editorLightBulb.foreground": "#656870",
+    "peekView.border": "#454850",
+    "peekViewTitle.background": "#454850",
+    "peekViewResult.background": "#252830",
+    "peekViewEditor.background": "#252830",
+    "peekViewResult.selectionBackground": "#454850"
   },
   "tokenColors": [
     {
